@@ -1,6 +1,8 @@
 # Hello-word
 Just a test
 这是我学习的封装函数
+
+
 function Bubble(arr){
     for(var i = 0;i < arr.length;i++){ //冒泡排序
         for(var j = 0;j < arr.length-i-1;j++){
@@ -27,6 +29,9 @@ function Choose(arr){
     }
     return arr;
 }
+
+
+
 function getStyle(elem, attr){  //获取当前样式
     return elem.currentStyle ? elem.currentStyle[attr] : getComputedStyle(elem)[attr];
 }
