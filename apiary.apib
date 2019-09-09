@@ -1,0 +1,82 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# douluodalu
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "status":0,
+                "message": [
+                    {
+                        "id": 1,
+                        "soul": "昊天锤/蓝银皇",
+                        "name":"唐三"
+                        "ctime":"2019-09-08T15:30:27.00Z"
+                    }, {
+                        "id": 2,
+                        "soul": "兔子",
+                        "name":"小舞"
+                        "ctime":"2019-09-08T15:30:27.00Z"
+                    }, {
+                        "id": 3,
+                        "soul": "凤凰",
+                        "name":"马红俊
+                        "ctime":"2019-09-08T15:30:27.00Z"
+                    }, 
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
